@@ -60,3 +60,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- vim: ts=2 sts=2 sw=2 et
+--
+-- Spell Checking
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
