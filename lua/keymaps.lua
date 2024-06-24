@@ -52,3 +52,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader><Tab>', function()
   vim.cmd ':wincmd w'
 end, { desc = 'Toggle between windows' })
+
+vim.keymap.set("c", "w!!", "w !sudo /run/current-system/sw/bin/tee > /dev/null %", { 
+  silent = false, 
+  desc = "Write as Sudo" 
+})
