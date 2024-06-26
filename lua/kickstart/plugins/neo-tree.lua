@@ -3,7 +3,7 @@
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  version = 'v3.x',
+  version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -14,6 +14,13 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    default_component_configs = {
+      icon = {
+        folder_closed = "",
+        folder_open = "",
+        folder_empty = "",
+      },
+    },
     filesystem = {
       window = {
         mappings = {
