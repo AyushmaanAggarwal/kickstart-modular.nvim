@@ -8,7 +8,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 -- ================================================
 --      My Configuration
 -- ================================================
-ls.add_snippets("md", {
+ls.add_snippets("markdown", {
     s({ trig = "math", name = "Metadata for Math HW",}, { fmta([[
     ---
     title: Math <> - Homework <>
@@ -31,7 +31,8 @@ ls.add_snippets("md", {
     \\newcommand{\\lt}{\\ensuremath <<}
     \\newcommand{\\gt}{\\ensuremath >>}
     ---
-    ]], {i(1), i(0)})}),
+    ]], {i(1), i(0)}
+    )}),
 })
 
 
