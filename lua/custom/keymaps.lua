@@ -12,7 +12,6 @@ local save_and_exec = function()
     vim.cmd 'make'
   end
 end
-
 local compile_document = function()
   -- string.match([[/mnt/tmp/myfile.py]], "(.-)([^\\/]-)([^%.\\/]*)$")
   local file_type = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -23,12 +22,27 @@ local compile_document = function()
   vim.print(file_pdf)
 
   if file_type == 'md' or file_type == "vimwiki" then
-    vim.cmd(string.format(":!pandoc -s %s -o %s --pdf-engine=lualatex", file_name, file_pdf))
+    vim.cmd(string.format(":silent !nohup pandoc -s %s -o %s --pdf-engine=pdflatex &", file_name, file_pdf))
     vim.cmd(string.format(":silent !nohup org.kde.okular %s &", file_pdf))
   end
 end
 
+local edit_snippets = function()
+  require("luasnip.loaders").edit_snippet_files()
+end
+
+local paste_image = function()
+  local file_name = vim.fn.input("Get file name: ")
+  vim.cmd(":!wl-paste --type image/png > " .. file_name)
+end
 
 -- Keymaps
 vim.keymap.set('n', '<leader>rf', save_and_exec, { desc = '[R]un [F]ile' })
 vim.keymap.set('n', '<leader>rd', compile_document, { desc = '[R]un [D]ocument' })
+vim.keymap.set('n', '<leader>e', edit_snippets, { desc = '[R]un [D]ocument' })
+vim.keymap.set('n', '<leader>rp', paste_image, { desc = 'r [Paste] Image' })
+
+-- Quarto
+-- local quarto = require('quarto')
+-- quarto.setup()
+-- vim.keymap.set('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
