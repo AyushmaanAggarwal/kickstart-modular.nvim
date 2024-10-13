@@ -19,7 +19,7 @@ return {
         --   -- },
         -- },
         config = function()
-          require("luasnip.loaders.from_lua").load({ paths = "~/.dotfiles/config/snippets" })
+          require("luasnip.loaders.from_lua").load({ paths = "/home/ayushmaan/.dotfiles/config/nvim/lua/custom/snippets" })
           require("luasnip").config.setup({ update_events = "TextChanged,TextChangedI" })
           require("luasnip").config.setup({ enable_autosnippets = true })
         end,
