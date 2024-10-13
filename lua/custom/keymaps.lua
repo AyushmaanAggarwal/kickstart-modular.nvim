@@ -22,7 +22,7 @@ local compile_document = function()
   vim.print(file_pdf)
 
   if file_type == 'md' or file_type == "vimwiki" then
-    vim.cmd(string.format(":silent !nohup pandoc -s %s -o %s --pdf-engine=pdflatex &", file_name, file_pdf))
+    vim.cmd(string.format(":!pandoc -s %s -o %s --pdf-engine=pdflatex &", file_name, file_pdf))
     vim.cmd(string.format(":silent !nohup org.kde.okular %s &", file_pdf))
   end
 end
