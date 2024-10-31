@@ -11,6 +11,11 @@ return {
     except {} as e:
         {}]], {i(1), i(2), i(3)})),
 
+    s("main", fmt([[
+    if __name__=="__main__":
+        {}
+    ]], { i(1) })),
+
 }, {
 
 }

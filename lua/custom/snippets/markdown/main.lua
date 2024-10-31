@@ -62,7 +62,7 @@ return {
   **Solution**
 
 
-  \newline
+  \newpage
 
     ]], {i(1), i(2)})),
 

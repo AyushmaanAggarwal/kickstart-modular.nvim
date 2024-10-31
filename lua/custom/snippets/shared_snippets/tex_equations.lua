@@ -82,8 +82,10 @@ local tab_snips = {
 
 local auto_snips = {
   -- Simple Auto Complete Snippets
-  s({ trig="%^", regTrig=true, name="exponent"}, fmta("^{<>}", {i(1)})),
-  s({ trig="_", regTrig=true, name="subscript"}, fmta("_{<>}", {i(1)})),
+  s({ trig="(%w+)%^", regTrig=true, name="exponent"}, fmta("<>^{<>}",
+    {f(function(_, snip) return snip.captures[1] end), i(1)})),
+  s({ trig="(%w+)%_", regTrig=true, name="subscript"}, fmta("<>_{<>}",
+    {f(function(_, snip) return snip.captures[1] end), i(1)})),
 
   s({ trig="(%s+)([^%s%.%/]+)/", regTrig=true, wordTrig=false, name='fraction'},
       fmta([[ \frac{<>}{<>}]],

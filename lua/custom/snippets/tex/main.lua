@@ -10,7 +10,7 @@ return {
 
   s("fig", fmta([[
     \begin{figure}[h]
-      \includegraphics[width=\textwidth]{<>}
+      \includegraphics[width=\linewidth]{<>}
       \caption{<>}
       \label{fig:<>}
     \end{figure}
