@@ -37,6 +37,7 @@ local tab_snips = {
   s("sum",  fmta([[\sum_{<>}^{<>}]], {i(1), i(2)})),
   s("diff", fmta([[\frac{\partial <>}{\partial <>}]], {i(1), i(2)})),
   s("txt", fmta([[\text{<>}]], {i(1)})),
+  s("sq", fmta([[\sqrt{<>}]], {i(1)})),
   s("mk", fmta([[$<>$]], {i(1)})),
   s("set", fmta([[\{<>\}]], {i(1)})),
   s("cirset", fmta([[C_{<>}(<>)]], {i(1, "r"), i(2)})),
@@ -77,6 +78,45 @@ local tab_snips = {
     { f(function(_, snip) return snip.captures[1] end),
     i(1),
     f(function(_, snip) return snip.captures[1] end)})),
+
+  -- Diagrams
+  s("dia", fmta([[
+    \begin{tikzpicture*}
+    <>
+    \end{tikzpicture*}
+    ]], {i(1)})),
+
+  s("line", fmta([[
+    \draw (<>,<>) -- (<>,<>);
+    ]], {i(1, "x1"), i(2, "y1"), i(3, "x2"), i(4,"y2")})),
+
+  s("rect", fmta([[
+    \draw (<>,<>) rectangle (<>,<>);
+    ]], {i(1, "x1"), i(2, "y1"), i(3, "x2"), i(4,"y2")})),
+
+  s("parabola", fmta([[
+    \draw (<>,<>) parabola (<>,<>);
+    ]], {i(1, "x1"), i(2, "y1"), i(3, "x2"), i(4,"y2")})),
+
+  s("spline", fmta([[
+    \draw (,) .. controls (,) and (,) .. (,);
+    ]], {})),
+
+  s("circ", fmta([[
+    \draw (<>,<>) circle (<>cm);
+    ]], {i(1, "x"), i(2, "y"), i(3, "r")})),
+
+  s("ellipse", fmta([[
+    \draw (<>,<>) ellipse (<>cm and <>cm);
+    ]], {i(1, "x"), i(2, "y"), i(3, "r1"), i(4, "r2")})),
+
+  s("arc", fmta([[
+    \draw (<>,<>) arc (<>:<>:<>cm);
+    ]], {i(1, "x"), i(2, "y"), i(3, "degree1"), i(3, "degree2"), i(3, "r")})),
+
+  s("grid", fmta([[
+    \draw[step=<>cm,gray,very thin] (<>,<>) grid (<>,<>);
+    ]], {i(1, "spacing "), i(2, "x1"), i(3, "y1"), i(3, "x2"), i(3, "y2")})),
 
 }
 
