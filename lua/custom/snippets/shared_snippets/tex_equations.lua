@@ -79,7 +79,9 @@ local tab_snips = {
     i(1),
     f(function(_, snip) return snip.captures[1] end)})),
 
-  -- Diagrams
+
+
+  -- tikz Diagrams
   s("dia", fmta([[
     \begin{tikzpicture*}
     <>

@@ -1,5 +1,5 @@
 -- " Numbat.vim - Vim syntax file for Numbat language
-
+return {}
 -- if exists("b:current_syntax")
 --     finish
 -- endif
