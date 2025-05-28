@@ -186,6 +186,7 @@ return {
         'stylua', -- Used to format Lua code
         'black',
         'debugpy',
+        'nil',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

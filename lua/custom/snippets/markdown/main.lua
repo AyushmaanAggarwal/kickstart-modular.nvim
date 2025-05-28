@@ -134,4 +134,5 @@ s({ trig = "code", name = "psuedocode block" }, fmt([[
     {i(1), i(2)})),
 
 }, {
+  s({ trig = "ooo", name = "Runtime" }, fmta([[$O(<>)$]], {i(1)})),
 }
