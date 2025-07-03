@@ -28,15 +28,33 @@ local fmta = require("luasnip.extras.fmt").fmta
 return {
   -- Default Configuration
   s({ trig = "nix", name = "Default nix configuration" }, fmta([[
-      { inputs, config, lib, pkgs, ... }:
       {
+        inputs,
+        config,
+        pkgs,
+        lib,
+        desktop,
+        hostname,
+        system,
+        username,
+        ...
+      }: {
         <>
       }
     ]], {i(1)})),
 
  s({ trig = "full", name = "Import config" }, fmta([[
-      { inputs, config, lib, pkgs, ... }:
       {
+        inputs,
+        config,
+        pkgs,
+        lib,
+        desktop,
+        hostname,
+        system,
+        username,
+        ...
+      }: {
         imports = [ <> ];
         options = {
           <>.enable = lib.mkOption {
@@ -55,6 +73,13 @@ return {
   s({ trig = "imports", name = "Import config" }, fmta([[
       imports = [ <> ];
     ]], {i(1)})),
+
+  s({ trig = "let", name = "Let-In statement" }, fmta([[
+      let
+        <>
+      in
+    ]], {i(1)})),
+
 
   -- Make Options
   s({ trig = "booloption", name = "Make Option" }, fmta([[

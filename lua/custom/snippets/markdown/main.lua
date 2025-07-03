@@ -29,7 +29,7 @@ local date = function() return {os.date('%m/%d/%Y')} end
 return {
   s({ trig = "math", name = "Metadata for Math HW" }, fmta([[
     ---
-    title: Math 185 - Homework <>
+    title: Math W128A - Homework <>
     author: Ayushmaan Aggarwal
     date: <>
     header-includes: |
@@ -88,13 +88,6 @@ return {
 
   s({ trig = "prob", name = "Problem for Math HW" }, fmt([[
   # Problem {}
-  > {}
-
-  **Solution**
-
-
-  \newpage
-
     ]], {i(1), i(2)})),
 
 s({ trig = "algo", name = "Problem for CS Algorithm" }, fmt([[

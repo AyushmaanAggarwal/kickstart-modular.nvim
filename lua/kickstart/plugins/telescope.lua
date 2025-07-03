@@ -66,6 +66,7 @@ return {
               "--line-number",   -- Show line numbers
               "--column",        -- Show column numbers
               "--smart-case",    -- Smart case search
+              "--sort=accessed",
 
               -- Exclude some patterns from search
               "--glob=!**/.git/*",
