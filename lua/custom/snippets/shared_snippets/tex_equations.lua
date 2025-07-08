@@ -35,6 +35,7 @@ local tab_snips = {
   s("gint", t([[\int_{\gamma} ]])),
   s("int",  fmta([[\int_{<>}^{<>}]], {i(1), i(2)})),
   s("sum",  fmta([[\sum_{<>}^{<>}]], {i(1), i(2)})),
+  s("lim",  fmta([[\lim_{<> \rightarrow <>}]], {i(1), i(2)})),
   s("diff", fmta([[\frac{\partial <>}{\partial <>}]], {i(1), i(2)})),
   s("txt", fmta([[\text{<>}]], {i(1)})),
   s("sq", fmta([[\sqrt{<>}]], {i(1)})),

@@ -55,11 +55,13 @@ return {
         username,
         ...
       }: {
-        imports = [ <> ];
+        imports = [ 
+          <> 
+        ];
         options = {
           <>.enable = lib.mkOption {
             type = lib.types.bool;
-            description = "<>";
+            description = "Enable <>";
             default = false;
           };
         };
@@ -67,7 +69,7 @@ return {
           <>
         };
       }
-    ]], {i(1), i(2), i(3), rep(4), i(5)})),
+    ]], {i(1), i(2), rep(2), rep(2), i(3)})),
 
   -- Import Configuration
   s({ trig = "imports", name = "Import config" }, fmta([[
@@ -85,10 +87,10 @@ return {
   s({ trig = "booloption", name = "Make Option" }, fmta([[
       <>.enable = lib.mkOption {
         type = lib.types.bool;
-        description = "<>";
+        description = "Enables <>";
         default = false;
       };
-    ]], {i(1), i(2)})),
+    ]], {i(1), rep(1)})),
    s({ trig = "stringoption", name = "Make Option" }, fmta([[
       <>.<> = lib.mkOption {
         type = lib.types.str;
@@ -99,10 +101,10 @@ return {
     s({ trig = "portoption", name = "Make Option" }, fmta([[
       <>.<> = lib.mkOption {
         type = lib.types.port;
-        description = "<>";
+        description = "Set port for <>";
         default = <>;
       };
-    ]], {i(1, "<service>"), i(2, "<option>"), i(3), i(4, "8080")})),
+    ]], {i(1, "<service>"), i(2, "<option>"), rep(1), i(3, "8080")})),
     s({ trig = "pass", name = "Add Sops Secret" }, fmta([[
       config.sops.secrets.<>.path
     ]], {i(1, "<name>")})),

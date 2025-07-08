@@ -51,6 +51,7 @@ return {
         'javascript',
         'markdown',
         'markdown_inline',
+        'matlab',
       },
     }
 

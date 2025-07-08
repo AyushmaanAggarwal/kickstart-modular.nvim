@@ -34,8 +34,11 @@ return {
   s("al", t([[\alpha]])),
   s("be", t([[\beta]])),
   s("ga", t([[gamma]])),
+  s("lam", t([[\lambda]])),
   s("de", t([[\delta]])),
   s("inf", t([[\infty]])),
+  s("app", t([[\approx]])),
+
 }, {
   s("qed", t([[$\square$]])),
   s("rar", t([[\rightarrow]])),
