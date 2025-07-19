@@ -27,20 +27,14 @@ local ms = ls.multi_snippet
 local k = require("luasnip.nodes.key_indexer").new_key
 
 
---TODO: Need to add \lim, better fraction support,
-
-return {
-  s("ep", t([[\epsilon]])),
-  s("al", t([[\alpha]])),
-  s("be", t([[\beta]])),
-  s("ga", t([[gamma]])),
-  s("la", t([[\lambda]])),
-  s("de", t([[\delta]])),
-  s("inf", t([[\infty]])),
-  s("ap", t([[\approx]])),
-  s("pr", t([[\prod]])),
-
-}, {
-  s("qed", t([[$\square$]])),
-  s("rar", t([[\rightarrow]])),
+local tab_snips = {
+  s({trig="Assume", name="Assume Contradiction"}, fmta([[Assume, for contradiction, that ]], {})),
+  s({ trig = "list", name = "Insert List" }, fmta([[$<>_1, <>_2, \dots, <>_<>$]],
+    {rep(1), rep(1), i(1), i(2)})),
 }
+
+local auto_snips = {
+}
+
+
+return tab_snips, auto_snips

@@ -41,30 +41,42 @@ local problem_count = function() return {tostring(count_in_file("# Problem"))} e
 return {
   s({ trig = "math", name = "Metadata for Math HW" }, fmta([[
     ---
-    title: Math W128A - Homework <>
-    author: Ayushmaan Aggarwal
+    title: "Math W128A - Homework <>"
+    author: "Ayushmaan Aggarwal"
     date: <>
-    header-includes: |
-      \usepackage{amsmath}
-      \newcommand{\lcm}{\operatorname{lcm}}
-      \newcommand{\Aut}{\operatorname{Aut}}
-      \newcommand{\R}{\mathbb R}
-      \newcommand{\C}{\mathbb C}
-      \newcommand{\N}{\mathbb N}
-      \newcommand{\Q}{\mathbb Q}
-      \newcommand{\Z}{\mathbb Z}
-      \newcommand{\norm}{\trianglelefteq}
-      \newcommand{\lt}{\ensuremath <<}
-      \newcommand{\gt}{\ensuremath >>}
-
-      \renewcommand{\P}{\mathbb P}
-      \renewcommand{\l}{\langle}
-      \renewcommand{\r}{\rangle}
-      \renewcommand{\Re}{\operatorname{Re}}
-      \renewcommand{\Im}{\operatorname{Im}}
+    execute:
+      cache: true
+    format:
+      pdf:
+        toc: true
+        number-sections: true
+        colorlinks: true
+        include-in-header:
+          - text: |
+              \usepackage{amsmath}
+              \usepackage{upgreek}
+              \newcommand{\lcm}{\operatorname{lcm}}
+              \newcommand{\Aut}{\operatorname{Aut}}
+              \newcommand{\R}{\mathbb R}
+              \newcommand{\C}{\mathbb C}
+              \newcommand{\N}{\mathbb N}
+              \newcommand{\Q}{\mathbb Q}
+              \newcommand{\Z}{\mathbb Z}
+              \newcommand{\norm}{\trianglelefteq}
+              \newcommand{\lt}{\ensuremath <<}
+              \newcommand{\gt}{\ensuremath >>}
+              \renewcommand{\P}{\mathbb P}
+              \renewcommand{\l}{\langle}
+              \renewcommand{\r}{\rangle}
+              \renewcommand{\Re}{\operatorname{Re}}
+              \renewcommand{\Im}{\operatorname{Im}}
+ 
+    jupyter: jupyter_matlab_kernel
     ---
-    
+   
     Self Grade: 2
+
+    \newpage
 
     # Problem 1
 
@@ -76,21 +88,29 @@ return {
 
     ]], {f(problem_count, {})})),
 
-  s({ trig = "code", name = "psuedocode block" }, fmt([[
-    ```matlab
-    {}
+  s({ trig = "code", name = "psuedocode block" }, fmta([[
+    ```{matlab}
+    <>
     ```
     ]], {i(1)})),
-
-  s({ trig = "\\\\", name = "Comment" }, fmt([[<!-- {} -->]],
-    {i(1)})),
 
   s({ trig = "part", name = "Part" }, fmt([[### Part {}]],
     {i(1)})),
 
+  s({ trig = "print", name = "Print" }, fmta([[fprintf('<>')]],
+    {i(1)})),
+
+  s({ trig = "float", name = "Print Float" }, fmt([[%18.15]], {})),
+  
 
   s({ trig = "fig", name = "Insert Figure" }, fmta([[![<>](./<>){width=300px}]],
     {i(1), i(2)})),
+
+  s({ trig = "matfig", name = "Insert Figure" }, fmta([[
+    h1<> = figure(<>);
+    plot(x,y)
+    set(h<>,'Position',[10 10 450 200])
+  ]], {i(1), rep(1), rep(1)})),
 
   s({ trig = "inter", name = "_ in interval" }, fmta([[$<> \in [<>, <>]$]],
     {i(1), i(2), i(3)})),
