@@ -82,48 +82,12 @@ return {
 
     ]], {i(1), f(date, {})})),
 
-  s({ trig = "prob", name = "Problem for Math HW" }, fmta([[
-    # Problem <>
-
-
-    ]], {f(problem_count, {})})),
-
   s({ trig = "code", name = "psuedocode block" }, fmta([[
     ```{matlab}
     <>
     ```
     ]], {i(1)})),
 
-  s({ trig = "part", name = "Part" }, fmt([[### Part {}]],
-    {i(1)})),
-
-  s({ trig = "print", name = "Print" }, fmta([[fprintf('<>')]],
-    {i(1)})),
-
-  s({ trig = "float", name = "Print Float" }, fmt([[%18.15]], {})),
-  
-
-  s({ trig = "fig", name = "Insert Figure" }, fmta([[![<>](./<>){width=300px}]],
-    {i(1), i(2)})),
-
-  s({ trig = "matfig", name = "Insert Figure" }, fmta([[
-    h1<> = figure(<>);
-    plot(x,y)
-    set(h<>,'Position',[10 10 450 200])
-  ]], {i(1), rep(1), rep(1)})),
-
-  s({ trig = "inter", name = "_ in interval" }, fmta([[$<> \in [<>, <>]$]],
-    {i(1), i(2), i(3)})),
-
-  s({ trig = "inter_wo", name = "_ in interval" }, fmta([[$<> \in (<>, <>)$]],
-    {i(1), i(2), i(3)})),
-
-
-  s({ trig = "cont", name = "Continous Function" }, fmta([[$<> \in C[a, b]$]],
-    {i(1)})),
-
-
 
 }, {
-  s({ trig = "ooo", name = "Runtime" }, fmta([[$O(<>)$]], {i(1)})),
 }
