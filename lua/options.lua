@@ -64,3 +64,6 @@ vim.opt.scrolloff = 10
 -- Spell Checking
 vim.opt.spelllang = 'en'
 vim.opt.spell = true
+
+-- File format to not adjust the EOF
+vim.opt.fileformats = "unix,dos,mac"
